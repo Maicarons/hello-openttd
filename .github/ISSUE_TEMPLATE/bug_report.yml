@@ -1,0 +1,65 @@
+name: 🐞 Bug 报告 / Bug Report
+description: 报告启动器的问题 / Report a problem with the launcher
+labels: [bug, triage]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        感谢反馈！请尽量填写完整，日志可在 **设置 → 高级 → 打开日志目录** 找到。
+        Thanks for reporting! Logs are available via *Settings → Advanced → Open log folder*.
+  - type: textarea
+    id: description
+    attributes:
+      label: 问题描述 / Description
+      description: 清晰描述预期行为与实际行为
+    validations:
+      required: true
+  - type: dropdown
+    id: area
+    attributes:
+      label: 涉及模块 / Area
+      options:
+        - 版本管理 / Versions
+        - 下载与镜像 / Downloads & Mirrors
+        - 启动器 / Launcher
+        - 配置编辑器 / Config Editor
+        - 模组中心 / Mods (BaNaNaS)
+        - 存档管理 / Saves
+        - 设置/界面 / Settings & UI
+        - 文档 / Docs
+        - 其他 / Other
+    validations:
+      required: true
+  - type: input
+    id: platform
+    attributes:
+      label: 平台与系统版本 / Platform & OS
+      placeholder: Windows 11 23H2 / Ubuntu 24.04 / macOS 15.0
+    validations:
+      required: true
+  - type: input
+    id: version
+    attributes:
+      label: 启动器版本 / Launcher version
+      placeholder: v0.3.0 或 commit hash
+    validations:
+      required: true
+  - type: textarea
+    id: steps
+    attributes:
+      label: 复现步骤 / Steps to reproduce
+      placeholder: |
+        1. ...
+        2. ...
+    validations:
+      required: true
+  - type: textarea
+    id: logs
+    attributes:
+      label: 相关日志 / Relevant logs
+      description: 请删除日志中可能包含的 Token 等敏感信息
+  - type: textarea
+    id: extra
+    attributes:
+      label: 补充信息 / Additional context
+      description: 截图、使用的镜像源、版本来源等

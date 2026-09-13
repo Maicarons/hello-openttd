@@ -1,0 +1,8 @@
+blank_issues_enabled: false
+contact_links:
+  - name: 使用问题与讨论 / Questions & Discussions
+    url: https://github.com/hello-openttd/hello-openttd/discussions
+    about: 使用疑问、功能讨论与经验分享请到这里 / For usage questions and ideas
+  - name: OpenTTD 官方
+    url: https://github.com/OpenTTD/OpenTTD
+    about: 游戏本体的 Bug 请反馈给 OpenTTD 官方 / Report game bugs upstream

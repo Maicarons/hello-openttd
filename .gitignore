@@ -1,0 +1,40 @@
+# ===== OS =====
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# ===== IDE =====
+.idea/
+.vscode/
+*.iml
+*.ipr
+*.iws
+
+# ===== Flutter / Dart =====
+.dart_tool/
+.flutter-plugins
+.flutter-plugins-dependencies
+.pub-cache/
+.pub/
+build/
+# 注意：本项目为应用，pubspec.lock 必须提交（可复现构建）
+*.g.dart
+*.freezed.dart
+generated_plugin_registrant*.cc
+
+# ===== Node / VitePress（docs）=====
+node_modules/
+docs/.vitepress/dist/
+docs/.vitepress/cache/
+*.log
+
+# ===== 运行时产物（本地调试启动器时）=====
+*.part
+coverage/
+
+# ===== 发布产物（仅上传 Release，不入库）=====
+/OpenDepot-*.zip
+/OpenDepot-*.zip.sha256
+
+# ===== 本地研究资料（不发布）=====
+ref/

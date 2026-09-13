@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="64" height="64">
+  <rect x="4" y="4" width="56" height="56" rx="14" fill="#2e7d32"/>
+  <rect x="4" y="4" width="56" height="56" rx="14" fill="none" stroke="#1b5e20" stroke-width="2"/>
+  <!-- 车库 Depot 门 -->
+  <path d="M16 46 V30 a16 12 0 0 1 32 0 V46 Z" fill="#a5d6a7"/>
+  <path d="M22 46 V34 a10 8 0 0 1 20 0 V46 Z" fill="#2e7d32"/>
+  <!-- 铁轨 -->
+  <rect x="12" y="48" width="40" height="3" rx="1.5" fill="#e8f5e9"/>
+  <rect x="18" y="52" width="3" height="6" rx="1" fill="#e8f5e9"/>
+  <rect x="30" y="52" width="3" height="6" rx="1" fill="#e8f5e9"/>
+  <rect x="42" y="52" width="3" height="6" rx="1" fill="#e8f5e9"/>
+</svg>
