@@ -1,6 +1,6 @@
 # Installation
 
-OpenDepot itself is a portable desktop app — unzip and run.
+hello-openttd itself is a portable desktop app — unzip and run.
 
 ## Requirements
 
@@ -18,34 +18,34 @@ Grab your platform bundle from GitHub Releases:
 
 | Platform | Artifact |
 |----------|----------|
-| Windows | `OpenDepot-<ver>-windows-x64.zip` |
-| Linux | `OpenDepot-<ver>-linux-x64.tar.gz` / `.AppImage` |
-| macOS | `OpenDepot-<ver>-macos-universal.zip` |
+| Windows | `hello-openttd-<ver>-windows-x64.zip` |
+| Linux | `hello-openttd-<ver>-linux-x64.tar.gz` / `.AppImage` |
+| macOS | `hello-openttd-<ver>-macos-universal.zip` |
 
 > Releases also ship a `sha256sums.txt`; verifying is recommended (see [Downloads](./downloads#file-verification)).
 
 ### Windows
 
-1. Unzip anywhere (a non-system drive such as `D:\OpenDepot` is recommended).
-2. Run `opendepot.exe`.
+1. Unzip anywhere (a non-system drive such as `D:\hello-openttd` is recommended).
+2. Run `hello_openttd.exe`.
 
 ### Linux
 
 ```bash
-tar -xzf OpenDepot-*-linux-x64.tar.gz
-cd OpenDepot
-./opendepot
+tar -xzf hello-openttd-*-linux-x64.tar.gz
+cd hello-openttd
+./hello_openttd
 ```
 
-AppImage: `chmod +x OpenDepot-*.AppImage && ./OpenDepot-*.AppImage`
+AppImage: `chmod +x hello-openttd-*.AppImage && ./hello-openttd-*.AppImage`
 
 ### macOS
 
-1. Unzip and move `OpenDepot.app` into **Applications**.
+1. Unzip and move `hello-openttd.app` into **Applications**.
 2. On first launch, if macOS says the developer can't be verified (unsigned until M7): right-click the app → **Open**; or run:
 
 ```bash
-xattr -cr /Applications/OpenDepot.app
+xattr -cr /Applications/hello-openttd.app
 ```
 
 ## First launch
@@ -54,11 +54,11 @@ The launcher asks you to confirm the **data root** — where versions, backups a
 
 | Platform | Default data root |
 |----------|-------------------|
-| Windows | `%APPDATA%\OpenDepot` |
-| Linux | `~/.local/share/opendepot` (XDG) |
-| macOS | `~/Library/Application Support/OpenDepot` |
+| Windows | `%APPDATA%\hello-openttd` |
+| Linux | `~/.local/share/hello-openttd` (XDG) |
+| macOS | `~/Library/Application Support/hello-openttd` |
 
-**Portable mode**: place a folder named `OpenDepotData` (or an empty `portable.flag`) next to the launcher binary; it becomes the data root — perfect for USB sticks and sync folders. Migrate later in [Settings](./settings#data-root).
+**Portable mode**: place a folder named `hello-openttdData` (or an empty `portable.flag`) next to the launcher binary; it becomes the data root — perfect for USB sticks and sync folders. Migrate later in [Settings](./settings#data-root).
 
 ## Upgrade & uninstall
 

@@ -9,7 +9,7 @@ class AppLocalizationsZh extends AppLocalizations {
   AppLocalizationsZh([String locale = 'zh']) : super(locale);
 
   @override
-  String get appName => 'OpenDepot';
+  String get appName => 'hello-openttd';
 
   @override
   String get navHome => '首页';
@@ -532,7 +532,7 @@ class AppLocalizationsZh extends AppLocalizations {
 
   @override
   String get settingsAboutBody =>
-      'OpenDepot — 开源 OpenTTD 启动器（AGPL-3.0）。与 OpenTTD 官方无隶属关系。';
+      'hello-openttd — 开源 OpenTTD 启动器（AGPL-3.0）。与 OpenTTD 官方无隶属关系。';
 
   @override
   String get settingsMirrorAdded => '镜像已添加';

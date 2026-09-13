@@ -1,6 +1,6 @@
 import 'package:flutter_test/flutter_test.dart';
-import 'package:opendepot/data/models/version_manifest.dart';
-import 'package:opendepot/services/process/launch_options.dart';
+import 'package:hello_openttd/data/models/version_manifest.dart';
+import 'package:hello_openttd/services/process/launch_options.dart';
 
 VersionManifest manifest({String configMode = 'independent'}) => VersionManifest(
       id: 'official-14.1',

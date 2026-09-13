@@ -22,9 +22,9 @@ flowchart LR
 
 | OS | Runner | Artifacts |
 |----|--------|-----------|
-| windows-latest | MSVC | `OpenDepot-<v>-windows-x64.zip` |
-| ubuntu-latest | GTK3 dev | `OpenDepot-<v>-linux-x64.tar.gz`, `.AppImage` |
-| macos-latest | Xcode | `OpenDepot-<v>-macos-universal.zip` |
+| windows-latest | MSVC | `hello-openttd-<v>-windows-x64.zip` |
+| ubuntu-latest | GTK3 dev | `hello-openttd-<v>-linux-x64.tar.gz`, `.AppImage` |
+| macos-latest | Xcode | `hello-openttd-<v>-macos-universal.zip` |
 
 Notes:
 

@@ -1,16 +1,16 @@
 import 'dart:io';
 
 import 'package:flutter_test/flutter_test.dart';
-import 'package:opendepot/data/models/launcher_settings.dart';
-import 'package:opendepot/data/models/mirror_config.dart';
-import 'package:opendepot/data/models/run_record.dart';
-import 'package:opendepot/data/repositories/repositories.dart';
+import 'package:hello_openttd/data/models/launcher_settings.dart';
+import 'package:hello_openttd/data/models/mirror_config.dart';
+import 'package:hello_openttd/data/models/run_record.dart';
+import 'package:hello_openttd/data/repositories/repositories.dart';
 
 void main() {
   late Directory tempDir;
 
   setUp(() async {
-    tempDir = await Directory.systemTemp.createTemp('opendepot-repo');
+    tempDir = await Directory.systemTemp.createTemp('hello-openttd-repo');
   });
 
   tearDown(() async {

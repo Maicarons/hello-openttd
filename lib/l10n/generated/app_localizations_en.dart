@@ -9,7 +9,7 @@ class AppLocalizationsEn extends AppLocalizations {
   AppLocalizationsEn([String locale = 'en']) : super(locale);
 
   @override
-  String get appName => 'OpenDepot';
+  String get appName => 'hello-openttd';
 
   @override
   String get navHome => 'Home';
@@ -541,7 +541,7 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get settingsAboutBody =>
-      'OpenDepot — an open-source OpenTTD launcher (AGPL-3.0). Not affiliated with the OpenTTD team.';
+      'hello-openttd — an open-source OpenTTD launcher (AGPL-3.0). Not affiliated with the OpenTTD team.';
 
   @override
   String get settingsMirrorAdded => 'Mirror added';

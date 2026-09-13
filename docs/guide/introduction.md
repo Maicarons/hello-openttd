@@ -1,6 +1,6 @@
 # 简介
 
-**OpenDepot**（工作代号）是一个开源的桌面级 **OpenTTD 启动器**，灵感来自 Minecraft 生态中成熟的 HMCL / PCL2 启动器：让"装一个版本、配一个模组、开一局游戏"变成点几下鼠标的事，而不是解压压缩包、翻论坛、手动改配置文件。
+**hello-openttd**（工作代号）是一个开源的桌面级 **OpenTTD 启动器**，灵感来自 Minecraft 生态中成熟的 HMCL / PCL2 启动器：让"装一个版本、配一个模组、开一局游戏"变成点几下鼠标的事，而不是解压压缩包、翻论坛、手动改配置文件。
 
 > 🚧 项目当前处于**文档与架构设计阶段**，功能将按 [路线图](https://github.com/hello-openttd/hello-openttd/blob/main/ROADMAP.md) 逐步交付。
 
@@ -8,7 +8,7 @@
 
 手动管理 OpenTTD 的典型痛点：
 
-| 痛点 | OpenDepot 的解法 |
+| 痛点 | hello-openttd 的解法 |
 |------|------------------|
 | 想同时玩官方版和 JGRPP，需要手动下载、解压到不同目录 | 多版本管理，各版本独立目录，一键切换 |
 | GitHub 下载慢或不可达 | 内置镜像加速（自动选优、断点续传、校验） |
@@ -50,9 +50,9 @@
 
 ## 与 OpenTTD 的关系
 
-OpenDepot 是**社区开发的第三方启动器**，与 OpenTTD 官方团队无隶属关系。它不修改游戏本体，仅负责下载、配置与启动。OpenTTD 本身的 Bug 请前往 [OpenTTD 官方仓库](https://github.com/OpenTTD/OpenTTD) 反馈。
+hello-openttd 是**社区开发的第三方启动器**，与 OpenTTD 官方团队无隶属关系。它不修改游戏本体，仅负责下载、配置与启动。OpenTTD 本身的 Bug 请前往 [OpenTTD 官方仓库](https://github.com/OpenTTD/OpenTTD) 反馈。
 
 ## 下一步
 
-- [安装 OpenDepot](./install)
+- [安装 hello-openttd](./install)
 - [快速上手：5 分钟开一局](./quick-start)

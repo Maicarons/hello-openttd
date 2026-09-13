@@ -4,7 +4,7 @@ Entry point of the developer docs: goals, scope, key engineering decisions (ADRs
 
 ## Positioning
 
-OpenDepot (repo `hello-openttd`) is a Flutter desktop launcher for OpenTTD, benchmarked against HMCL / PCL2, launching on Windows / Linux / macOS.
+hello-openttd (repo `hello-openttd`) is a Flutter desktop launcher for OpenTTD, benchmarked against HMCL / PCL2, launching on Windows / Linux / macOS.
 
 **In scope**
 

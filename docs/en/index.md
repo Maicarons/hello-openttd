@@ -2,7 +2,7 @@
 layout: home
 
 hero:
-  name: OpenDepot
+  name: hello-openttd
   text: A modern launcher for OpenTTD
   tagline: Multi-version management · Mirror-accelerated downloads · Mod store · Config editor · Save management — the HMCL/PCL2 experience, for transport tycoons.
   actions:

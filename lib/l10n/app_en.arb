@@ -1,6 +1,6 @@
 {
   "@@locale": "en",
-  "appName": "OpenDepot",
+  "appName": "hello-openttd",
   "navHome": "Home",
   "navVersions": "Versions",
   "navLaunch": "Launch",
@@ -177,7 +177,7 @@
   "settingsAdvanced": "Advanced",
   "settingsOpenLogs": "Open log folder",
   "settingsAbout": "About",
-  "settingsAboutBody": "OpenDepot — an open-source OpenTTD launcher (AGPL-3.0). Not affiliated with the OpenTTD team.",
+  "settingsAboutBody": "hello-openttd — an open-source OpenTTD launcher (AGPL-3.0). Not affiliated with the OpenTTD team.",
   "settingsMirrorAdded": "Mirror added",
   "settingsProbeNow": "Probe now",
   "settingsProbeResult": "{name}: {ms} ms",

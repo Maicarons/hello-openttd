@@ -138,7 +138,7 @@ const repo = 'https://github.com/hello-openttd/hello-openttd'
 
 export default defineConfig({
   base,
-  title: 'OpenDepot',
+  title: 'hello-openttd',
   head: [['link', { rel: 'icon', type: 'image/svg+xml', href: `${base}logo.svg` }]],
   lastUpdated: true,
   cleanUrls: false,
@@ -173,7 +173,7 @@ export default defineConfig({
         },
         footer: {
           message: '基于 AGPL-3.0 发布 · 与 OpenTTD 官方无隶属关系',
-          copyright: 'OpenDepot Contributors'
+          copyright: 'hello-openttd Contributors'
         }
       }
     },
@@ -200,7 +200,7 @@ export default defineConfig({
         },
         footer: {
           message: 'Released under AGPL-3.0 · Not affiliated with the OpenTTD team',
-          copyright: 'OpenDepot Contributors'
+          copyright: 'hello-openttd Contributors'
         }
       }
     }

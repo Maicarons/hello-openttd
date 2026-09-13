@@ -4,7 +4,7 @@ import 'package:path/path.dart' as p;
 
 /// Resolved directory layout of the launcher's data root.
 ///
-/// Portable mode is active when a folder named `OpenDepotData` (or an empty
+/// Portable mode is active when a folder named `hello-openttd-data` (or an empty
 /// `portable.flag` file) exists next to the launcher binary; in that case the
 /// data root follows the program folder.
 class AppPaths {
@@ -57,13 +57,13 @@ Directory executableDirectory() =>
 /// Resolves the data root (portable mode first, platform default second).
 Future<AppPaths> resolveAppPaths() async {
   final exeDir = executableDirectory();
-  final portableDir = Directory(p.join(exeDir.path, 'OpenDepotData'));
+  final portableDir = Directory(p.join(exeDir.path, 'hello-openttd-data'));
   final portableFlag = File(p.join(exeDir.path, 'portable.flag'));
   final portable = portableDir.existsSync() || portableFlag.existsSync();
 
   final Directory root;
   if (portable) {
-    root = portableDir.existsSync() ? portableDir : Directory(p.join(exeDir.path, 'OpenDepotData'));
+    root = portableDir.existsSync() ? portableDir : Directory(p.join(exeDir.path, 'hello-openttd-data'));
   } else {
     root = Directory(defaultDataRootPath());
   }
@@ -76,13 +76,13 @@ Future<AppPaths> resolveAppPaths() async {
 String defaultDataRootPath() {
   if (Platform.isWindows) {
     final appData = Platform.environment['APPDATA'];
-    return p.join(appData ?? '.', 'OpenDepot');
+    return p.join(appData ?? '.', 'hello-openttd');
   }
   if (Platform.isMacOS) {
     final home = Platform.environment['HOME'] ?? '.';
-    return p.join(home, 'Library', 'Application Support', 'OpenDepot');
+    return p.join(home, 'Library', 'Application Support', 'hello-openttd');
   }
   final xdg = Platform.environment['XDG_DATA_HOME'];
   final home = Platform.environment['HOME'] ?? '.';
-  return p.join(xdg ?? p.join(home, '.local', 'share'), 'opendepot');
+  return p.join(xdg ?? p.join(home, '.local', 'share'), 'hello-openttd');
 }

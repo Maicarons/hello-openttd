@@ -1,6 +1,6 @@
 import 'package:flutter_test/flutter_test.dart';
-import 'package:opendepot/core/errors/failures.dart';
-import 'package:opendepot/core/paths/fs_guard.dart';
+import 'package:hello_openttd/core/errors/failures.dart';
+import 'package:hello_openttd/core/paths/fs_guard.dart';
 
 void main() {
   const guard = FsGuard();

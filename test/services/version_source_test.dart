@@ -3,10 +3,10 @@ import 'dart:typed_data';
 
 import 'package:dio/dio.dart';
 import 'package:flutter_test/flutter_test.dart';
-import 'package:opendepot/services/version_source/cdn_source.dart';
-import 'package:opendepot/services/version_source/github_source.dart';
-import 'package:opendepot/services/version_source/url_list_source.dart';
-import 'package:opendepot/services/version_source/version_source.dart';
+import 'package:hello_openttd/services/version_source/cdn_source.dart';
+import 'package:hello_openttd/services/version_source/github_source.dart';
+import 'package:hello_openttd/services/version_source/url_list_source.dart';
+import 'package:hello_openttd/services/version_source/version_source.dart';
 
 void main() {
   group('platformKeyForFilename', () {

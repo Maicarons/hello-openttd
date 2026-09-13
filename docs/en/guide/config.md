@@ -1,6 +1,6 @@
 # Config Management
 
-OpenTTD behavior is driven by `openttd.cfg` (INI-style). OpenDepot adds scheme management and a graphical editor.
+OpenTTD behavior is driven by `openttd.cfg` (INI-style). hello-openttd adds scheme management and a graphical editor.
 
 ## Config schemes
 

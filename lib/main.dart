@@ -10,11 +10,11 @@ Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
   final paths = await resolveAppPaths();
   initLogging(paths.logsDir);
-  Log.info('OpenDepot starting; data root: ${redact(paths.dataRoot.path)}');
+  Log.info('hello-openttd starting; data root: ${redact(paths.dataRoot.path)}');
   runApp(
     ProviderScope(
       overrides: [appPathsProvider.overrideWithValue(paths)],
-      child: const OpenDepotApp(),
+      child: const HelloOpenTTDApp(),
     ),
   );
 }

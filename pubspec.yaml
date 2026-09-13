@@ -1,5 +1,5 @@
-name: opendepot
-description: "OpenDepot — a modern OpenTTD launcher (versions, mirrors, mods, config, saves)."
+name: hello_openttd
+description: "hello-openttd — a modern OpenTTD launcher (versions, mirrors, mods, config, saves)."
 publish_to: 'none'
 version: 0.1.0+1
 

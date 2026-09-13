@@ -1,5 +1,5 @@
 import 'package:flutter_test/flutter_test.dart';
-import 'package:opendepot/core/utils/format.dart';
+import 'package:hello_openttd/core/utils/format.dart';
 
 void main() {
   group('formatBytes', () {

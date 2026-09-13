@@ -1,6 +1,6 @@
 import 'package:flutter_test/flutter_test.dart';
-import 'package:opendepot/services/config/cfg_document.dart';
-import 'package:opendepot/services/config/key_catalog.dart';
+import 'package:hello_openttd/services/config/cfg_document.dart';
+import 'package:hello_openttd/services/config/key_catalog.dart';
 
 const sampleCfg = '''
 [misc]

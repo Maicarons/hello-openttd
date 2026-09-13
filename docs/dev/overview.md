@@ -4,7 +4,7 @@
 
 ## 项目定位
 
-OpenDepot（仓库 `hello-openttd`）是 Flutter 桌面端 OpenTTD 启动器，对标 Minecraft 生态的 HMCL / PCL2 体验，首发 Windows / Linux / macOS。
+hello-openttd（仓库 `hello-openttd`）是 Flutter 桌面端 OpenTTD 启动器，对标 Minecraft 生态的 HMCL / PCL2 体验，首发 Windows / Linux / macOS。
 
 **范围（In scope）**
 

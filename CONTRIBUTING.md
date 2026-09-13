@@ -1,6 +1,6 @@
 # 贡献指南 / Contributing Guide
 
-感谢关注 OpenDepot！无论是文档、代码、翻译还是测试反馈，都非常欢迎。
+感谢关注 hello-openttd！无论是文档、代码、翻译还是测试反馈，都非常欢迎。
 
 > English summary at the bottom.
 

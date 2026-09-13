@@ -2,7 +2,7 @@
 layout: home
 
 hero:
-  name: OpenDepot
+  name: hello-openttd
   text: 现代化的 OpenTTD 启动器
   tagline: 多版本管理 · 镜像加速 · 模组商店 · 配置编辑 · 存档管理 —— 把 HMCL/PCL2 级别的体验带给运输大亨
   actions:

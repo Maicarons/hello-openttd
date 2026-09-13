@@ -1,6 +1,6 @@
 {
   "@@locale": "zh",
-  "appName": "OpenDepot",
+  "appName": "hello-openttd",
   "navHome": "首页",
   "navVersions": "版本管理",
   "navLaunch": "启动",
@@ -177,7 +177,7 @@
   "settingsAdvanced": "高级",
   "settingsOpenLogs": "打开日志目录",
   "settingsAbout": "关于",
-  "settingsAboutBody": "OpenDepot — 开源 OpenTTD 启动器（AGPL-3.0）。与 OpenTTD 官方无隶属关系。",
+  "settingsAboutBody": "hello-openttd — 开源 OpenTTD 启动器（AGPL-3.0）。与 OpenTTD 官方无隶属关系。",
   "settingsMirrorAdded": "镜像已添加",
   "settingsProbeNow": "立即测速",
   "settingsProbeResult": "{name}: {ms} ms",

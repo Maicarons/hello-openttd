@@ -1,9 +1,9 @@
 import 'dart:io';
 
 import 'package:flutter_test/flutter_test.dart';
-import 'package:opendepot/core/paths/app_paths.dart';
-import 'package:opendepot/data/models/version_manifest.dart';
-import 'package:opendepot/services/saves/save_service.dart';
+import 'package:hello_openttd/core/paths/app_paths.dart';
+import 'package:hello_openttd/data/models/version_manifest.dart';
+import 'package:hello_openttd/services/saves/save_service.dart';
 
 void main() {
   late Directory tempDir;
@@ -12,7 +12,7 @@ void main() {
   late SaveService service;
 
   setUp(() async {
-    tempDir = await Directory.systemTemp.createTemp('opendepot-saves');
+    tempDir = await Directory.systemTemp.createTemp('hello-openttd-saves');
     paths = AppPaths(dataRoot: tempDir, portable: true);
     await paths.ensureAll();
 

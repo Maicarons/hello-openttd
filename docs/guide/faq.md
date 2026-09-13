@@ -22,7 +22,7 @@ A: Linux 上启动器调用系统 `tar` 解压 `.tar.xz`，请确认系统已安
 ## macOS 相关
 
 **Q: "无法打开，因为无法验证开发者"？**
-A: 应用尚未签名公证。右键 App → 打开；或执行 `xattr -cr /Applications/OpenDepot.app`。见[安装](./install#macos)。
+A: 应用尚未签名公证。右键 App → 打开；或执行 `xattr -cr /Applications/hello-openttd.app`。见[安装](./install#macos)。
 
 **Q: 游戏窗口无法全屏 / 分辨率异常？**
 A: 先在游戏内 Video Options 调整；或用启动页的 `-r` 参数指定分辨率。

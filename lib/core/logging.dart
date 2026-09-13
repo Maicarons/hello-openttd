@@ -17,7 +17,7 @@ class Log {
     try {
       if (!dir.existsSync()) dir.createSync(recursive: true);
       _prune(dir);
-      final name = 'opendepot-${DateTime.now().toIso8601String().substring(0, 10)}.log';
+      final name = 'hello-openttd-${DateTime.now().toIso8601String().substring(0, 10)}.log';
       final file = File(p.join(dir.path, name));
       _sink = file.openWrite(mode: FileMode.append);
       _currentFile = file.path;

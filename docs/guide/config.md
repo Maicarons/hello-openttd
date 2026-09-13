@@ -1,6 +1,6 @@
 # 配置管理
 
-OpenTTD 的行为几乎都由 `openttd.cfg`（INI 风格）控制。OpenDepot 提供配置方案管理与图形化编辑器。
+OpenTTD 的行为几乎都由 `openttd.cfg`（INI 风格）控制。hello-openttd 提供配置方案管理与图形化编辑器。
 
 ## 配置方案
 

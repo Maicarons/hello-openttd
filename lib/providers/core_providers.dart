@@ -75,7 +75,7 @@ final dioProvider = Provider<Dio>((ref) {
     connectTimeout: const Duration(seconds: 15),
     receiveTimeout: const Duration(seconds: 30),
     headers: {
-      'User-Agent': 'OpenDepot/0.1',
+      'User-Agent': 'hello-openttd/0.1',
       if (token.isNotEmpty) 'Authorization': 'Bearer $token',
     },
   ));

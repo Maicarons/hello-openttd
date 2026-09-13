@@ -6,11 +6,11 @@ import 'dart:typed_data';
 import 'package:crypto/crypto.dart';
 import 'package:dio/dio.dart';
 import 'package:flutter_test/flutter_test.dart';
-import 'package:opendepot/core/errors/failures.dart';
-import 'package:opendepot/data/models/mirror_config.dart';
-import 'package:opendepot/services/download/download_engine.dart';
-import 'package:opendepot/services/mirror/mirror_service.dart';
-import 'package:opendepot/services/security/url_validator.dart';
+import 'package:hello_openttd/core/errors/failures.dart';
+import 'package:hello_openttd/data/models/mirror_config.dart';
+import 'package:hello_openttd/services/download/download_engine.dart';
+import 'package:hello_openttd/services/mirror/mirror_service.dart';
+import 'package:hello_openttd/services/security/url_validator.dart';
 
 /// Local HTTP server fixture with real Range/206 semantics.
 class _TestServer {
@@ -64,7 +64,7 @@ void main() {
   late Directory tempDir;
 
   setUp(() async {
-    tempDir = await Directory.systemTemp.createTemp('opendepot-dl');
+    tempDir = await Directory.systemTemp.createTemp('hello-openttd-dl');
   });
 
   tearDown(() async {

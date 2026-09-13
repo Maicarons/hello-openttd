@@ -1,6 +1,6 @@
-# OpenDepot 🚂
+# hello-openttd 🚂
 
-> **OpenDepot**（工作代号，仓库名 `hello-openttd`）是一个现代化的 [OpenTTD](https://www.openttd.org/) 桌面启动器，目标是把类 MC 启动器（HMCL / PCL2）的优秀体验带到 OpenTTD：多版本管理、镜像加速、模组商店、配置编辑器、存档管理，开箱即用。
+> **hello-openttd**（工作代号，仓库名 `hello-openttd`）是一个现代化的 [OpenTTD](https://www.openttd.org/) 桌面启动器，目标是把类 MC 启动器（HMCL / PCL2）的优秀体验带到 OpenTTD：多版本管理、镜像加速、模组商店、配置编辑器、存档管理，开箱即用。
 
 <div align="center">
 

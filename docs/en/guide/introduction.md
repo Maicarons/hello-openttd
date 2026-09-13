@@ -1,12 +1,12 @@
 # Introduction
 
-**OpenDepot** (working codename) is an open-source desktop **launcher for OpenTTD**, inspired by the mature HMCL / PCL2 launchers of the Minecraft ecosystem: installing a version, adding a mod and starting a game should take a few clicks — not unzip wars, forum spelunking and hand-editing config files.
+**hello-openttd** (working codename) is an open-source desktop **launcher for OpenTTD**, inspired by the mature HMCL / PCL2 launchers of the Minecraft ecosystem: installing a version, adding a mod and starting a game should take a few clicks — not unzip wars, forum spelunking and hand-editing config files.
 
 > 🚧 The project is in its **documentation & architecture phase**; features ship according to the [roadmap](https://github.com/hello-openttd/hello-openttd/blob/main/ROADMAP.md).
 
 ## Why a launcher?
 
-| Pain | OpenDepot's answer |
+| Pain | hello-openttd's answer |
 |------|--------------------|
 | Playing official + JGRPP means manual downloads into separate folders | Multi-version management, isolated directories, one-click switching |
 | GitHub downloads slow or unreachable | Built-in mirror acceleration (auto-select, resume, checksums) |
@@ -48,9 +48,9 @@
 
 ## Relationship with OpenTTD
 
-OpenDepot is a **community-built third-party launcher**, not affiliated with the OpenTTD team. It never modifies the game itself. Game bugs go to the [OpenTTD repository](https://github.com/OpenTTD/OpenTTD).
+hello-openttd is a **community-built third-party launcher**, not affiliated with the OpenTTD team. It never modifies the game itself. Game bugs go to the [OpenTTD repository](https://github.com/OpenTTD/OpenTTD).
 
 ## Next steps
 
-- [Install OpenDepot](./install)
+- [Install hello-openttd](./install)
 - [Quick start: a game in 5 minutes](./quick-start)

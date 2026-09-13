@@ -1,6 +1,6 @@
 # 下载与镜像
 
-OpenDepot 所有下载（游戏版本、模组）都经过同一个下载引擎：**自动选择最优源、断点续传、SHA-256 校验**。
+hello-openttd 所有下载（游戏版本、模组）都经过同一个下载引擎：**自动选择最优源、断点续传、SHA-256 校验**。
 
 ## 工作方式
 
@@ -39,7 +39,7 @@ https://mirror.example.com/github/{owner}/{repo}/releases/download/{tag}/{asset}
 注意事项：
 
 - 仅接受 **HTTPS** 镜像；`{url}` 替换值在拼接后仍会做合法性校验。
-- ⚠️ **镜像质量参差**：曾有公共加速域名（如 ghproxy.com）易主后对所有请求返回 HTTP 200 的 HTML 页面，静默损坏下载。OpenDepot 的防线：默认镜像列表只内置经过验证的源（直连 + ghfast.net），下载前做 **magic-byte 校验**，任何伪装成压缩包的 HTML 都会在解压前被拒绝；SHA-256 校验进一步兜底。
+- ⚠️ **镜像质量参差**：曾有公共加速域名（如 ghproxy.com）易主后对所有请求返回 HTTP 200 的 HTML 页面，静默损坏下载。hello-openttd 的防线：默认镜像列表只内置经过验证的源（直连 + ghfast.net），下载前做 **magic-byte 校验**，任何伪装成压缩包的 HTML 都会在解压前被拒绝；SHA-256 校验进一步兜底。
 - 镜像只影响**文件下载**；GitHub API（版本列表）默认直连 `api.github.com`，如有需要可在设置中另行配置。
 - 未登录状态下 GitHub API 有每小时 60 次的限额；如需更高限额，可在设置中提供个人访问令牌（PAT，仅保存在本地）。
 

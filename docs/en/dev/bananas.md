@@ -78,4 +78,4 @@ Scan results deduplicate per file; game-installed entries show `source: game` wi
 
 ## 8. Etiquette
 
-Respect content licenses (shown on detail pages); rate-limit requests; identify as `OpenDepot/<version>`; cache listings to be gentle on the service.
+Respect content licenses (shown on detail pages); rate-limit requests; identify as `hello-openttd/<version>`; cache listings to be gentle on the service.

@@ -72,4 +72,4 @@ BaNaNaS 包（`.tar`）按 OpenTTD 的搜索路径放入版本目录的 `content
 ## 8. 法律与礼貌
 
 - 内容版权归各自作者；详情页展示上游许可证。
-- 遵守上游 API 礼貌性约束：请求频率限制、UA 标识（`OpenDepot/<version>`）、列表缓存减轻服务端压力。
+- 遵守上游 API 礼貌性约束：请求频率限制、UA 标识（`hello-openttd/<version>`）、列表缓存减轻服务端压力。

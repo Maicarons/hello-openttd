@@ -22,7 +22,7 @@ A: On Linux the launcher delegates `.tar.xz` to the system `tar`; make sure xz/t
 ## macOS
 
 **Q: "Cannot open because the developer cannot be verified".**
-A: Unsigned until M7. Right-click → Open, or `xattr -cr /Applications/OpenDepot.app`. See [Installation](./install#macos).
+A: Unsigned until M7. Right-click → Open, or `xattr -cr /Applications/hello-openttd.app`. See [Installation](./install#macos).
 
 **Q: Fullscreen / resolution issues in game.**
 A: Adjust in the game's Video Options, or pass `-r` on the launch page.

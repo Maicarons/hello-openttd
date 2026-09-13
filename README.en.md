@@ -1,6 +1,6 @@
-# OpenDepot 🚂
+# hello-openttd 🚂
 
-> **OpenDepot** (working codename, repository name `hello-openttd`) is a modern desktop launcher for [OpenTTD](https://www.openttd.org/), bringing the HMCL / PCL2-style Minecraft launcher experience to OpenTTD: multi-version management, mirror-accelerated downloads, a mod store, a config editor and save management — batteries included.
+> **hello-openttd** (working codename, repository name `hello-openttd`) is a modern desktop launcher for [OpenTTD](https://www.openttd.org/), bringing the HMCL / PCL2-style Minecraft launcher experience to OpenTTD: multi-version management, mirror-accelerated downloads, a mod store, a config editor and save management — batteries included.
 
 <div align="center">
 

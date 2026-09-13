@@ -15,14 +15,14 @@ import 'providers/core_providers.dart';
 import 'ui/layout/app_shell.dart';
 import 'ui/theme/app_theme.dart';
 
-class OpenDepotApp extends ConsumerStatefulWidget {
-  const OpenDepotApp({super.key});
+class HelloOpenTTDApp extends ConsumerStatefulWidget {
+  const HelloOpenTTDApp({super.key});
 
   @override
-  ConsumerState<OpenDepotApp> createState() => _OpenDepotAppState();
+  ConsumerState<HelloOpenTTDApp> createState() => _HelloOpenTTDAppState();
 }
 
-class _OpenDepotAppState extends ConsumerState<OpenDepotApp> {
+class _HelloOpenTTDAppState extends ConsumerState<HelloOpenTTDApp> {
   late final GoRouter _router = GoRouter(
     initialLocation: '/home',
     routes: [
@@ -54,7 +54,7 @@ class _OpenDepotAppState extends ConsumerState<OpenDepotApp> {
   Widget build(BuildContext context) {
     final settings = ref.watch(settingsProvider);
     return MaterialApp.router(
-      title: 'OpenDepot',
+      title: 'hello-openttd',
       debugShowCheckedModeBanner: false,
       routerConfig: _router,
       theme: AppTheme.light(),

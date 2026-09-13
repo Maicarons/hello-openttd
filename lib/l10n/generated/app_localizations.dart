@@ -101,7 +101,7 @@ abstract class AppLocalizations {
   /// No description provided for @appName.
   ///
   /// In zh, this message translates to:
-  /// **'OpenDepot'**
+  /// **'hello-openttd'**
   String get appName;
 
   /// No description provided for @navHome.
@@ -1097,7 +1097,7 @@ abstract class AppLocalizations {
   /// No description provided for @settingsAboutBody.
   ///
   /// In zh, this message translates to:
-  /// **'OpenDepot — 开源 OpenTTD 启动器（AGPL-3.0）。与 OpenTTD 官方无隶属关系。'**
+  /// **'hello-openttd — 开源 OpenTTD 启动器（AGPL-3.0）。与 OpenTTD 官方无隶属关系。'**
   String get settingsAboutBody;
 
   /// No description provided for @settingsMirrorAdded.
