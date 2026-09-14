@@ -27,14 +27,23 @@ class MirrorService {
   }
 
   /// Applies the mirror template to an original URL.
+  ///
+  /// Mirrors are *GitHub* accelerators: only `github.com` /
+  /// `objects.githubusercontent.com` URLs are rewritten. Everything else
+  /// (OpenTTD CDN, BaNaNaS API, URL-list sources) always goes direct so a
+  /// dead proxy can never stall unrelated downloads.
   String translate(String originalUrl, MirrorConfig mirror) {
     if (mirror.id == builtinDirectMirrorId) return originalUrl;
+    final uri = Uri.parse(originalUrl);
+    final host = uri.host.toLowerCase();
+    if (host != 'github.com' && host != 'objects.githubusercontent.com') {
+      return originalUrl;
+    }
     var template = mirror.template;
     if (template.contains('{url}')) {
       final out = template.replaceAll('{url}', originalUrl);
       return _urls.validate(out).toString();
     }
-    final uri = Uri.parse(originalUrl);
     // https://github.com/{owner}/{repo}/releases/download/{tag}/{asset}
     final segments = List<String>.from(uri.pathSegments);
     final isDownload = segments.length >= 5 &&

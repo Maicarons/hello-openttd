@@ -3,6 +3,7 @@ import 'dart:async';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
+import '../../core/logging.dart';
 import '../../core/utils/format.dart';
 import '../../data/models/version_models.dart';
 import '../../l10n/generated/app_localizations.dart';
@@ -51,6 +52,7 @@ class _VersionsPageState extends ConsumerState<VersionsPage> {
       list.sort((a, b) => compareVersions(b.version, a.version));
       if (mounted) setState(() => _releases = AsyncValue.data(list));
     } catch (e, st) {
+      Log.error('load releases (${source.id}) failed', e, st);
       if (mounted) setState(() => _releases = AsyncValue.error(e, st));
     }
   }

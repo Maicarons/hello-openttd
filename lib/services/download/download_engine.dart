@@ -75,7 +75,7 @@ class DownloadEngine {
         } on CancelledFailure {
           rethrow;
         } on Failure catch (e) {
-          Log.debug('mirror ${mirror.name} failed: ${e.detail}');
+          Log.info('mirror ${mirror.name} failed: ${e.detail}');
           lastError = e;
         }
       }
@@ -128,6 +128,7 @@ class DownloadEngine {
           options: Options(
             responseType: ResponseType.stream,
             headers: headers,
+            connectTimeout: const Duration(seconds: 8),
             followRedirects: true,
             maxRedirects: 5,
             validateStatus: (s) => s != null && s < 400,

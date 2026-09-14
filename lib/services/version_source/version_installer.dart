@@ -1,3 +1,4 @@
+import 'dart:async';
 import 'dart:convert';
 import 'dart:io';
 
@@ -42,60 +43,90 @@ class VersionInstaller {
     required String platform,
     required String configMode,
     required String versionId,
-  }) async* {
-    final asset = release.assets[platform] ??
-        (throw NotFoundFailure('release ${release.version} has no $platform asset'));
+  }) {
+    final controller = StreamController<InstallProgress>();
+    _runInstall(
+      controller,
+      release: release,
+      platform: platform,
+      configMode: configMode,
+      versionId: versionId,
+    );
+    return controller.stream;
+  }
 
-    final dirName = '$versionId-${release.version}';
-    final targetDir = Directory(_guard.safeJoin(paths.versionsDir.path, dirName));
-    if (targetDir.existsSync()) {
-      throw ConflictFailure('version directory already exists: ${targetDir.path}');
-    }
-
-    yield InstallProgress(phase: InstallPhase.downloading);
-    engine.onProgress = (received, total, bps) {};
-    final fileName = asset.url.split('/').last.split('?').first;
-    DownloadResult result;
+  Future<void> _runInstall(
+    StreamController<InstallProgress> controller, {
+    required SourceRelease release,
+    required String platform,
+    required String configMode,
+    required String versionId,
+  }) async {
     try {
-      result = await engine.downloadFile(
-        url: asset.url,
-        fileName: fileName,
-        expectedSha256: asset.sha256,
-        expectedSize: asset.size,
-      );
-    } on Failure {
-      rethrow;
-    }
-    final verified = asset.sha256 != null;
-    yield InstallProgress(phase: InstallPhase.verifying, unverified: !verified);
+      final asset = release.assets[platform] ??
+          (throw NotFoundFailure('release ${release.version} has no $platform asset'));
 
-    yield InstallProgress(phase: InstallPhase.extracting);
-    final tmpDir = Directory(p.join(paths.versionsDir.path, '.$dirName.tmp'));
-    if (tmpDir.existsSync()) tmpDir.deleteSync(recursive: true);
-    tmpDir.createSync(recursive: true);
-    try {
-      await archive.extract(result.file, tmpDir);
-      _locateBinary(tmpDir); // fail fast before moving into place
+      final dirName = '$versionId-${release.version}';
+      final targetDir = Directory(_guard.safeJoin(paths.versionsDir.path, dirName));
       if (targetDir.existsSync()) {
-        throw ConflictFailure('version directory appeared during install');
+        throw ConflictFailure('version directory already exists: ${targetDir.path}');
       }
-      tmpDir.renameSync(targetDir.path);
-    } on Failure {
-      if (tmpDir.existsSync()) {
+
+      controller.add(InstallProgress(phase: InstallPhase.downloading));
+      final fileName = asset.url.split('/').last.split('?').first;
+      DownloadResult result;
+      try {
+        // Forward real byte progress from the engine so the install dialog
+        // shows an advancing bar instead of an indeterminate spinner.
+        engine.onProgress = (received, total, bps) {
+          controller.add(InstallProgress(
+            phase: InstallPhase.downloading,
+            received: received,
+            total: total,
+            speedBps: bps,
+          ));
+        };
+        result = await engine.downloadFile(
+          url: asset.url,
+          fileName: fileName,
+          expectedSha256: asset.sha256,
+          expectedSize: asset.size,
+        );
+      } on Failure {
+        rethrow;
+      } finally {
+        engine.onProgress = null;
+      }
+      final verified = asset.sha256 != null;
+      controller.add(InstallProgress(phase: InstallPhase.verifying, unverified: !verified));
+
+      controller.add(InstallProgress(phase: InstallPhase.extracting));
+      final tmpDir = Directory(p.join(paths.versionsDir.path, '.$dirName.tmp'));
+      if (tmpDir.existsSync()) tmpDir.deleteSync(recursive: true);
+      tmpDir.createSync(recursive: true);
+      try {
+        await archive.extract(result.file, tmpDir);
+        _locateBinary(tmpDir); // fail fast before moving into place
+        if (targetDir.existsSync()) {
+          throw ConflictFailure('version directory appeared during install');
+        }
+        tmpDir.renameSync(targetDir.path);
+      } on Failure {
+        if (tmpDir.existsSync()) {
+          try {
+            tmpDir.deleteSync(recursive: true);
+          } on FileSystemException catch (e) {
+            Log.error('cleanup of $tmpDir failed', e);
+          }
+        }
+        rethrow;
+      } finally {
         try {
-          tmpDir.deleteSync(recursive: true);
-        } on FileSystemException catch (e) {
-          Log.error('cleanup of $tmpDir failed', e);
+          if (result.file.existsSync()) result.file.deleteSync();
+        } on FileSystemException {
+          // keep the cache file on failure to delete; harmless
         }
       }
-      rethrow;
-    } finally {
-      try {
-        if (result.file.existsSync()) result.file.deleteSync();
-      } on FileSystemException {
-        // keep the cache file on failure to delete; harmless
-      }
-    }
 
     final binary = _locateBinary(targetDir);
     final manifest = VersionManifest(
@@ -111,7 +142,12 @@ class VersionInstaller {
     );
     File(p.join(targetDir.path, 'manifest.json'))
         .writeAsStringSync(const JsonEncoder.withIndent('  ').convert(manifest.toJson()));
-    yield InstallProgress(phase: InstallPhase.finishing, unverified: !verified);
+    controller.add(InstallProgress(phase: InstallPhase.finishing, unverified: !verified));
+    } catch (e, st) {
+      controller.addError(e, st);
+    } finally {
+      await controller.close();
+    }
   }
 
   /// Finds the game executable inside an installed/extracted directory.
