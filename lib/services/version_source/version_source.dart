@@ -23,6 +23,7 @@ String? platformKeyForFilename(String filename) {
 
   final isArm = lower.contains('arm64') || lower.contains('aarch64');
   if (isWindows) {
+    if (isArm) return PlatformTarget.windowsArm64;
     if (lower.contains('win32')) return PlatformTarget.windowsX86;
     return PlatformTarget.windowsX64;
   }

@@ -31,12 +31,17 @@ class SourceAsset {
 class PlatformTarget {
   static const windowsX64 = 'windows-x64';
   static const windowsX86 = 'windows-x86';
+  static const windowsArm64 = 'windows-arm64';
   static const linuxX64 = 'linux-x64';
   static const linuxArm64 = 'linux-arm64';
   static const macos = 'macos';
 
   static String detect() {
-    if (Platform.isWindows) return windowsX64;
+    if (Platform.isWindows) {
+      final arch = Platform.environment['PROCESSOR_ARCHITECTURE'] ?? '';
+      if (arch.toLowerCase().contains('arm64')) return windowsArm64;
+      return windowsX64;
+    }
     if (Platform.isMacOS) return macos;
     if (Platform.operatingSystemVersion.contains('arm64') ||
         Platform.operatingSystemVersion.contains('aarch64')) {

@@ -11,6 +11,11 @@ void main() {
       expect(FsGuard.isValidFilename('openttd-14.1'), isTrue);
       expect(FsGuard.isValidFilename('我的存档 sav_1'), isTrue);
       expect(FsGuard.isValidFilename('Ünïcode'), isTrue);
+      // Regression: `'\0'` in Dart is the digit '0', not NUL — names with
+      // '0' (e.g. OpenTTD's compat_0.7.nut) must be accepted.
+      expect(FsGuard.isValidFilename('compat_0.7.nut'), isTrue);
+      expect(FsGuard.isValidFilename('a0b'), isTrue);
+      expect(FsGuard.isValidFilename('x07'), isTrue);
     });
 
     test('rejects traversal and separators', () {

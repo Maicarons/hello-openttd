@@ -21,7 +21,8 @@ class FsGuard {
     if (name.isEmpty || name.length > 128) return false;
     if (name == '.' || name == '..') return false;
     if (name.contains('/') || name.contains(r'\') || name.contains(':')) return false;
-    if (name.contains('\0') || name.codeUnits.any((c) => c < 0x20)) return false;
+    // NOTE: `'\0'` is NOT NUL in Dart — it is the digit '0'. Use `\x00`.
+    if (name.contains('\x00') || name.codeUnits.any((c) => c < 0x20)) return false;
     if (name.startsWith('.') || name.endsWith('.')) return false;
     if (_reservedWindows.hasMatch(name)) return false;
     // Whitespace-only names are meaningless and error-prone.
