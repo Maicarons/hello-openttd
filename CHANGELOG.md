@@ -11,6 +11,10 @@
 
 ### Added
 
+- **中文排版**：集成 chinese_font_library，全主题接入系统中文回退字体（Windows 雅黑 / macOS 苹方 / Linux Noto CJK），修复 CJK 字体"仅常规字重、伪粗体"问题
+- **应用图标**：flutter_launcher_icons 生成 Windows .ico 与 macOS AppIcon（仓库库房主题图标，脚本 `scripts/gen_icon.ps1` 可重绘）
+- **桌面窗口体验**：window_manager 初始化（默认 1280×800、最小 1020×680、首次启动居中、窗口标题）
+- **UI 打磨**：全局快捷键 Ctrl+1..7 切换页面、Ctrl+, 打开设置（文档已声明）；启动页分段按钮防溢出；配置页进入自动加载；卡片/对话框统一描边与圆角
 - **版本管理**：官方 OpenTTD（CDN，自带 SHA-256 全程校验）、JGRPP、CMClient 三个内置版本源；自定义 GitHub / URL 列表源；安装 / 卸载 / 本地版本接管（adopt）
 - **下载引擎**：镜像自动探测与选择（默认 direct + ghfast.net）、HTTP Range 断点续传、流式 SHA-256 校验（fail-closed）、逐镜像回退、magic-byte 归档校验、Zip Slip 防护
 - **启动器**：四种启动方式（新游戏/载入存档/加入服务器/专用服务器）、命令行预览、多实例、进程监控（运行记录、日志落盘、优雅终止）、独立/共享配置（`-c`）

@@ -167,15 +167,47 @@ class _LaunchPageState extends ConsumerState<LaunchPage> {
                     Text(version?.label ?? l.homeNoVersions,
                         style: Theme.of(context).textTheme.titleMedium),
                     const SizedBox(height: 12),
-                    SegmentedButton<LaunchMode>(
-                      segments: [
-                        ButtonSegment(value: LaunchMode.newGame, label: Text(l.launchModeNewGame)),
-                        ButtonSegment(value: LaunchMode.loadSave, label: Text(l.launchModeLoadSave)),
-                        ButtonSegment(value: LaunchMode.joinServer, label: Text(l.launchModeJoinServer)),
-                        ButtonSegment(value: LaunchMode.dedicated, label: Text(l.launchModeDedicated)),
-                      ],
-                      selected: {_mode},
-                      onSelectionChanged: (s) => setState(() => _mode = s.first),
+                    // Full-width segmented control with per-segment flexible
+                    // labels so it never overflows at the 1020px min width.
+                    LayoutBuilder(
+                      builder: (context, constraints) {
+                        final segmentWidth =
+                            (constraints.maxWidth - 24) / 4;
+                        return SegmentedButton<LaunchMode>(
+                          segments: [
+                            ButtonSegment(
+                              value: LaunchMode.newGame,
+                              label: SizedBox(
+                                width: segmentWidth,
+                                child: Text(l.launchModeNewGame, textAlign: TextAlign.center),
+                              ),
+                            ),
+                            ButtonSegment(
+                              value: LaunchMode.loadSave,
+                              label: SizedBox(
+                                width: segmentWidth,
+                                child: Text(l.launchModeLoadSave, textAlign: TextAlign.center),
+                              ),
+                            ),
+                            ButtonSegment(
+                              value: LaunchMode.joinServer,
+                              label: SizedBox(
+                                width: segmentWidth,
+                                child: Text(l.launchModeJoinServer, textAlign: TextAlign.center),
+                              ),
+                            ),
+                            ButtonSegment(
+                              value: LaunchMode.dedicated,
+                              label: SizedBox(
+                                width: segmentWidth,
+                                child: Text(l.launchModeDedicated, textAlign: TextAlign.center),
+                              ),
+                            ),
+                          ],
+                          selected: {_mode},
+                          onSelectionChanged: (s) => setState(() => _mode = s.first),
+                        );
+                      },
                     ),
                     const SizedBox(height: 12),
                     if (_mode == LaunchMode.loadSave)

@@ -23,6 +23,16 @@ class _ConfigPageState extends ConsumerState<ConfigPage> {
   bool _rawMode = false;
 
   @override
+  void initState() {
+    super.initState();
+    // Load the selected version's config right away instead of requiring a
+    // manual "refresh" tap on first visit.
+    WidgetsBinding.instance.addPostFrameCallback((_) {
+      if (mounted) _loadDoc();
+    });
+  }
+
+  @override
   void dispose() {
     _rawController.dispose();
     _searchController.dispose();
